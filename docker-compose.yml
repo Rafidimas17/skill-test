@@ -1,0 +1,30 @@
+version : '3.8'
+
+
+services:
+  php-native:
+    build: .
+    container_name: php-native
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "80:80"
+    networks:
+      - app-networks
+  
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: test0lymp!c
+      MYSQL_DATABASE: olympic-test-db 
+      MYSQL_USER: user 
+      MYSQL_PASSWORD: Olympic-db-1
+    ports:
+      - "3306:3306"
+    networks:
+      - app-networks
+
+networks:
+  app-networks:
+    driver: bridge
