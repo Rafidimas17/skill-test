@@ -32,6 +32,6 @@ foreach ($langkah as $langkahTunggal) {
         }
     }, $langkahTunggal, array_keys($langkahTunggal));
 
-    // echo implode('', $langkahTunggalFormat) . "<br>";
+  
     echo "<span style='line-height: 1.15;'>" . implode('', $langkahTunggalFormat) . "<br></span>";
 }
